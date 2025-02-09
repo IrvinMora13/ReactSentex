@@ -1,0 +1,83 @@
+.navbar {
+  background-color: white;
+  height: 4.5em;
+  margin: 1.5em;
+  border-radius: 0.8em;
+  padding: 0.5rem;
+  border-width: 0.1em;
+  border-color: black;
+  border-style: solid;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: black;
+  font-size: 1.5em;
+  transition: 0.3s color;
+}
+
+.login-button {
+  background-color: white;
+  color: #00b4cc;
+  font-weight: 700;
+  font-size: 1.0em;
+  padding: .8em 2em;
+  border-radius: 1em;
+  text-decoration: none;
+  border: 0.13em solid;
+  transition: 0.3s background-color;
+}
+
+.login-button:hover {
+  background-color: #008c9e;
+  color: white;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.5em;
+
+}
+
+.navbar-toggler:focus, .btn-close:focus{
+  box-shadow:#00b4cc;
+  outline: none;
+}
+
+.navbar-item{
+  margin: auto 0.7em;
+}
+
+.nav-link{
+  font-weight: 600;
+  color: black;
+  position: relative;
+
+}
+
+.nav-link:hover, .nav-link.active{
+  font-size: 1.2em;
+  font-weight: 650;
+  color: black;
+}
+
+
+@media (min-width: 991px) {
+  .nav-link::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0.12em;
+    background-color: #009970;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before,.nav-link.active::before{
+    width: 100%;
+    visibility: visible;
+  }
+}

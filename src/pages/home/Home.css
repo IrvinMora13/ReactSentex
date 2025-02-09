@@ -1,0 +1,25 @@
+.hero {
+    width: 100%;
+    height: 120vh; /* Ajusta la altura a tu gusto */
+    background-image: url("../../assets/backgroundHero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Opacidad para mejor legibilidad */
+  }
+  
+  .text-center {
+    position: relative;
+    z-index: 1;
+  }
+  
