@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         <Link className='login-button' to="/login">Login</Link>
+        <Link className='login-button' to="/register">Register</Link>
         <button className='navbar-toggler pe-0' type='button' data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavBar" aria-controls='offcanvasNavBar'
           arial-label="Toggle navigation">

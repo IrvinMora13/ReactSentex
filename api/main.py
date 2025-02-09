@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from database import engine, Base
 import routes.users as user_routes
 
@@ -6,6 +7,16 @@ import routes.users as user_routes
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+# Habilitar CORS (para permitir peticiones desde React en localhost)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Registrar rutas
 app.include_router(user_routes.router, prefix="/api")

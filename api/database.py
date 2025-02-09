@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Configuración de la conexión a MySQL
-DATABASE_URL = "mysql+pymysql://root:24282213Mys.@localhost/sentex"
+DATABASE_URL = "mysql+pymysql://root:24282213Mys.@localhost:3306/sentex"
 
 # Crear el motor de conexión
 engine = create_engine(DATABASE_URL)
