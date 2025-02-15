@@ -13,17 +13,17 @@ export function useUsers() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Obtener usuario por ID
-  const getUser = async (userId: number) => {
-    setLoading(true);
+  // Obtener usuario por Email
+  const getUser = async (email: string, password: string) => {
+
     try {
-      const response = await api.get<User>(`/users/${userId}`);
+      const response = await api.post("/auth/login", { email, password });
       return response.data;
-    } catch (err) {
-      setError("Error al obtener el usuario");
-    } finally {
-      setLoading(false);
-    }
+      
+  } catch (err) {
+      console.log(err);
+  }
+
   };
 
   // Crear un usuario
@@ -39,6 +39,8 @@ export function useUsers() {
     } finally {
       setLoading(false);
     }
+
+
   };
   
 
